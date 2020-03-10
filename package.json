@@ -1,0 +1,22 @@
+{
+  "name": "juiceshop",
+  "version": "1.0.0",
+  "description": "Simple juice shop app.",
+  "main": "index.js",
+  "start": "node index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Student Name",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "ejs": "*",
+    "express-validator": "*",
+    "express-session": "*",
+    "connect-flash": "*",
+    "express-messages": "*",
+    "mongoose": "*"
+  }
+}

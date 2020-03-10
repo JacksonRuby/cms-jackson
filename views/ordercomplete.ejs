@@ -1,0 +1,37 @@
+<%- include('_layouts/header') -%>
+<main>
+    <section>
+        <h1>Order Complete!</h1>
+        <h2>Here are your order details:</h2>
+        <p>Name: <%= name %></p>
+        <p>Phone: <%= phone %></p>
+        <%
+        if (typeof(mango) !== 'undefined')
+        {
+            %>
+            <p>Total cost of mango juices: $<%= mango %></p>
+            <%
+        }
+        %>
+        <%
+        if (typeof(mango) !== 'undefined')
+        {
+            %>
+            <p>Total cost of berry juices: $<%= berry %></p>
+            <%
+        }
+        %>
+        <%
+        if (typeof(mango) !== 'undefined')
+        {
+            %>
+            <p>Total cost of apple juices: $<%= apple %></p>
+            <%
+        }
+        %>
+        <p>Sub Total: $<%= subTotal %></p>
+        <p>Tax: $<%= tax %></p>
+        <p>Total Cost: $<%= total %></p>
+    </section>
+</main>
+<%- include('_layouts/footer') -%>

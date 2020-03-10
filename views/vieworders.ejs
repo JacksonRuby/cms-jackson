@@ -1,0 +1,44 @@
+<%- include('_layouts/header') -%>
+<main>
+    <section>
+        <h1>View Orders</h1>
+        <table class="pageTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Mango</th>
+                    <th>Berry</th>
+                    <th>Apple</th>
+                    <th>Sub Total</th>
+                    <th>Tax</th>
+                    <th>Total</th>
+                    <th>Manage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                if(orders !== 'undefined')
+                {
+                    orders.forEach(function(order){
+                        %>
+                        <tr>
+                            <td><%= order.name %></td>
+                            <td><%= order.phone %></td>
+                            <td><%= order.mangoJuices %></td>
+                            <td><%= order.berryJuices %></td>
+                            <td><%= order.appleJuices %></td>
+                            <td>$<%= ((order.mangoJuices * 2.99) + (order.berryJuices * 1.99) + (order.appleJuices * 2.49)).toFixed(2) %></td>
+                            <td>$<%= (((order.mangoJuices * 2.99) + (order.berryJuices * 1.99) + (order.appleJuices * 2.49)) * .13).toFixed(2) %></td>
+                            <td>$<%= (((order.mangoJuices * 2.99) + (order.berryJuices * 1.99) + (order.appleJuices * 2.49)) * 1.13).toFixed(2) %></td>
+                            <td><a href="/delete/<%= order._id %>">Delete</a></td>
+                        </tr>
+                        <%
+                    }); 
+                }
+                %>
+            </tbody>
+        </table>
+    </section>
+</main>
+<%- include('_layouts/footer') -%>
